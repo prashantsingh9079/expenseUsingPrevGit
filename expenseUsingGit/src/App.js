@@ -1,5 +1,6 @@
 import Items from './Components/ExpModule/Items';
 import './App.css';
+import ExpenseForm from './Components/ExpModule/ExpenseForm';
 
 const App=()=> {
   const expenseList = [
@@ -46,6 +47,7 @@ const App=()=> {
         desc={expenseList[3].desc}
         price={expenseList[3].price}
         location={expenseList[3].location} />
+        <ExpenseForm/>
     </div>
   );
 }
