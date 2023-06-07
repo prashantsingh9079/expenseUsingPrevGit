@@ -6,6 +6,11 @@ import ExpensesFilter from './Components/ExpModule/AddExpense/ExpensesFilter';
 
 const App = () => {
 
+  const [filteredYear,setFilterYear] = useState('2020');
+  const filterChangeHandler = selectedYear =>{
+    setFilterYear(selectedYear);
+  }
+
   const [arr, arrFun] = useState({ date: '', desc: '', price: '', location: '', key: '' })
 
   const expenseList = [
@@ -56,10 +61,7 @@ const App = () => {
       price: expenses.amount
     })
   }
-  const [filteredYear,setFilterYear] = useState('2020');
-  const filterChangeHandler = selectedYear =>{
-    setFilterYear(selectedYear);
-  }
+  
   return (
     // <div className="App">
     //   <NewExpense onAddExpense={addExpenseHandler} />
