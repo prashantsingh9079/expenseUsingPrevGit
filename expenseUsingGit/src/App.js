@@ -2,6 +2,7 @@ import Items from './Components/ExpModule/Items';
 import './App.css';
 import NewExpense from './Components/ExpModule/AddExpense/NewExpense';
 import React, { useState } from 'react';
+import ExpensesFilter from './Components/ExpModule/AddExpense/ExpensesFilter';
 
 const App = () => {
 
@@ -55,8 +56,10 @@ const App = () => {
       price: expenses.amount
     })
   }
-
-
+  const [filteredYear,setFilterYear] = useState('2020');
+  const filterChangeHandler = selectedYear =>{
+    setFilterYear(selectedYear);
+  }
   return (
     // <div className="App">
     //   <NewExpense onAddExpense={addExpenseHandler} />
@@ -79,6 +82,7 @@ const App = () => {
 
       <div className="App">
         <NewExpense onAddExpense={addExpenseHandler} />
+        <ExpensesFilter selected={filteredYear} onChangedFilter={filterChangeHandler}/>
         { expenseList.map(a => {
           return(
           <Items key={Math.random()} date={a.date} desc={a.desc} price={a.price} location={a.location} />)
