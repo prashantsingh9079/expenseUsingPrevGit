@@ -1,8 +1,8 @@
 import Items from './Components/ExpModule/Items';
 import './App.css';
-import ExpenseForm from './Components/ExpModule/ExpenseForm';
+import NewExpense from './Components/ExpModule/AddExpense/NewExpense';
 
-const App=()=> {
+const App = () => {
   const expenseList = [
     {
       date: new Date(2023, 5, 4),
@@ -31,6 +31,7 @@ const App=()=> {
   ]
   return (
     <div className="App">
+        <NewExpense />
       <Items date={expenseList[0].date}
         desc={expenseList[0].desc}
         price={expenseList[0].price}
@@ -47,7 +48,7 @@ const App=()=> {
         desc={expenseList[3].desc}
         price={expenseList[3].price}
         location={expenseList[3].location} />
-        <ExpenseForm/>
+      
     </div>
   );
 }
